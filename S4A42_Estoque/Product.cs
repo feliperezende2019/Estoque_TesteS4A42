@@ -2,12 +2,25 @@
 using System.Globalization;
 namespace S4A42_Estoque
 {
-    class Inventory
+    class Product
     {
         public string Name;
         public double Price;
         public int Quantity;
 
+        // Construtores ----------------
+        public Product()
+        {            
+        }               
+
+        public Product(string name, double price, int quantity)
+        {
+            Name = name;
+            Price = price;
+            Quantity = quantity;
+        }
+
+        // Funções ---------------
         public double ValorTotalEmEstoque()
         {
             return Price * Quantity;
@@ -23,7 +36,7 @@ namespace S4A42_Estoque
             Quantity = Quantity - quantidy;
         }
 
-
+        // Override pra informar o estoque ---------------
         public override string ToString()
         {
             return Name
